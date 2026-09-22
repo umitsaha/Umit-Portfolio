@@ -40,6 +40,7 @@ export type ContestResult = {
   contest: string
   year: string
   result: string
+  href?: string
 }
 
 export type Project = {
@@ -69,6 +70,22 @@ export type SkillGroup = {
   items: string[]
 }
 
+export type OnlineJudgeProfile = {
+  id: string
+  platform: string
+  username: string
+  profileUrl: string
+  description: string
+  rating?: string
+  maxRating?: string
+  rank?: string
+  problemsSolved?: string
+  statistic?: string
+  verified: boolean
+  featured?: boolean
+  accent: string
+}
+
 export type Profile = {
   name: string
   title: string
@@ -88,13 +105,9 @@ export type Profile = {
   achievements: Achievement[]
   contests: ContestResult[]
   platforms: {
-    codeforcesHandle: string
-    codeforcesMaxRating: number
-    codeforcesRank: string
-    codechefStars: number
-    problemsSolvedLabel: string
     problemsSolvedNote: string
   }
+  onlineJudgeProfiles: OnlineJudgeProfile[]
   projects: Project[]
   publication: Publication
   skills: SkillGroup[]

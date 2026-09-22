@@ -1,4 +1,4 @@
-import { Download } from 'lucide-react'
+import { Download, ExternalLink } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/ui/Section'
 import { ButtonLink } from '@/components/ui/ButtonLink'
 import { profile } from '@/data/portfolio'
@@ -9,11 +9,15 @@ export function Resume() {
       <SectionHeading
         eyebrow="Resume"
         title="Curriculum vitae"
-        description="Place your PDF at public/resume.pdf. Until then, the viewer shows a placeholder."
+        description="Read or download the latest version of my curriculum vitae."
       />
-      <div className="mb-5">
+      <div className="mb-5 flex flex-wrap gap-3">
+        <ButtonLink href={profile.resumePath} target="_blank" rel="noopener noreferrer" variant="secondary">
+          View Resume
+          <ExternalLink className="h-4 w-4" />
+        </ButtonLink>
         <ButtonLink href={profile.resumePath} download>
-          Download CV
+          Download Resume
           <Download className="h-4 w-4" />
         </ButtonLink>
       </div>
@@ -26,7 +30,7 @@ export function Resume() {
         >
           <div className="p-8 text-[var(--text-soft)]">
             Resume PDF is not available yet. Add a file at{' '}
-            <code className="font-mono text-[var(--text)]">public/resume.pdf</code> to enable the
+            <code className="font-mono text-[var(--text)]">public/resume/Umit_Saha.pdf</code> to enable the
             embedded viewer and download button.
           </div>
         </object>

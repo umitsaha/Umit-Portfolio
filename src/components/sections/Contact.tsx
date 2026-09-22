@@ -8,7 +8,18 @@ export function Contact() {
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setSubmitted(true)
+    if (!profile.email) {
+      setSubmitted(true)
+      return
+    }
+
+    const formData = new FormData(event.currentTarget)
+    const name = String(formData.get('name') ?? '')
+    const senderEmail = String(formData.get('email') ?? '')
+    const message = String(formData.get('message') ?? '')
+    const subject = `Portfolio message from ${name || 'a visitor'}`
+    const body = `Name: ${name}\nEmail: ${senderEmail}\n\n${message}`
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -16,7 +27,7 @@ export function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="Let’s talk"
-        description="The form below is a UI only. It is not connected to a backend and does not send messages."
+        description="Send a message through your default mail application, or reach me through LinkedIn."
       />
       <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="space-y-4">
@@ -53,7 +64,9 @@ export function Contact() {
           noValidate
         >
           <p className="mb-4 rounded-xl bg-[var(--accent-soft)] px-3 py-2 text-sm text-[var(--text)]">
-            This contact form is not connected. Use LinkedIn or email instead.
+            {profile.email
+              ? 'The form will open your default mail application with the message prepared.'
+              : 'Email is not configured yet. Use LinkedIn to reach me for now.'}
           </p>
           <label className="block text-sm text-[var(--text-soft)]" htmlFor="name">
             Name
@@ -87,11 +100,11 @@ export function Contact() {
             type="submit"
             className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-[var(--bg)]"
           >
-            Submit (not sent)
+            Open Mail App
           </button>
           {submitted ? (
             <p className="mt-3 text-sm text-[var(--text-soft)]" role="status">
-              Nothing was sent. Please contact me through LinkedIn until a mail service is wired up.
+              No public email address is configured yet. Please contact me through LinkedIn.
             </p>
           ) : null}
         </form>

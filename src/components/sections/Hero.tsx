@@ -1,4 +1,4 @@
-import { ArrowDownRight, Download } from 'lucide-react'
+import { ArrowDownRight, Download, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profile } from '@/data/portfolio'
 import { ButtonLink } from '@/components/ui/ButtonLink'
@@ -34,6 +34,10 @@ export function Hero() {
             <ButtonLink href={profile.resumePath} variant="secondary" download>
               Download Resume
               <Download className="h-4 w-4" />
+            </ButtonLink>
+            <ButtonLink href={profile.resumePath} variant="ghost" target="_blank" rel="noopener noreferrer">
+              View Resume
+              <ExternalLink className="h-4 w-4" />
             </ButtonLink>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
