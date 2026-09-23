@@ -29,9 +29,7 @@ export function Resume() {
           aria-label="Resume PDF viewer"
         >
           <div className="p-8 text-[var(--text-soft)]">
-            Resume PDF is not available yet. Add a file at{' '}
-            <code className="font-mono text-[var(--text)]">public/resume/Umit_Saha.pdf</code> to enable the
-            embedded viewer and download button.
+            PDF preview is not supported on this device. Use the View Resume or Download Resume buttons above.
           </div>
         </object>
       </div>
