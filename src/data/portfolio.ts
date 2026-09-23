@@ -1,6 +1,8 @@
 import profileImage from '@/assets/umit_profile_pic.jpg'
 import type { Profile } from '@/types/portfolio'
 
+const baseUrl = import.meta.env.BASE_URL
+
 export const profile: Profile = {
   name: 'Umit Saha',
   title: 'Software Engineer at Samsung R&D Bangladesh',
@@ -17,7 +19,8 @@ export const profile: Profile = {
     'I have been involved in competitive programming for several years, including ICPC regionals and the ICPC Asia West contest. I also mentor students in data structures and algorithms at Shohoj Coding.',
     'My research interests sit at the intersection of programming skill, assessment, and machine learning. I co-authored an IEEE conference paper on predicting industry placement from competitive programming performance.',
   ],
-  resumePath: '/resume/Umit_Saha.pdf',
+  email: 'umitsahaayon@gmail.com',
+  resumePath: `${baseUrl}resume/Umit_Saha.pdf`,
   social: [
     {
       label: 'LinkedIn',

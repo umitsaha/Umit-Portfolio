@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: '/Umit-Portfolio/',
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
