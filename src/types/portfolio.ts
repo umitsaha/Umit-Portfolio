@@ -32,7 +32,7 @@ export type Achievement = {
   id: string
   title: string
   detail: string
-  source: 'self-reported' | 'live'
+  href?: string
 }
 
 export type ContestResult = {

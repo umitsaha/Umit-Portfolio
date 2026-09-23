@@ -112,32 +112,35 @@ export const profile: Profile = {
       title: '4000+ problems solved',
       detail:
         'Cumulative problem-solving practice across competitive programming platforms.',
-      source: 'self-reported',
     },
     {
       id: 'west',
       title: 'ICPC Asia West 2025',
       detail: 'Participant.',
-      source: 'self-reported',
     },
     {
       id: 'srbd-finalist',
       title: 'SRBD Code Contest finalist',
       detail: 'Finalist in 2023 and 2024.',
-      source: 'self-reported',
     },
     {
       id: 'srbd-onsite',
       title: 'SRBD onsite contest, 2024',
       detail: '3rd position.',
-      source: 'self-reported',
+      href: 'https://research.samsung.com/news/Samsung-R-D-Institute-Bangladesh-Held-Code-Contest-2024-Empowering-Future-Talents',
     },
   ],
   contests: [
     { id: 'icpc-2021', contest: 'ICPC Asia Dhaka Regional Contest', year: '2021', result: 'Rank 25' },
     { id: 'icpc-2022', contest: 'ICPC Asia Dhaka Regional Contest', year: '2022', result: 'Rank 25' },
     { id: 'icpc-2023', contest: 'ICPC Asia Dhaka Regional Contest', year: '2023', result: 'Rank 38' },
-    { id: 'icpc-2024', contest: 'ICPC Asia Dhaka Regional Contest', year: '2024', result: 'Rank 21' },
+    {
+      id: 'icpc-2024',
+      contest: 'ICPC Asia Dhaka Regional Contest',
+      year: '2024',
+      result: 'Rank 21',
+      href: 'https://bapsoj.org/contests/icpc-asia-dhaka-regional-contest-2024-onsite-round/standings',
+    },
     {
       id: 'ncpc-2023',
       contest: 'NCPC Final',
@@ -245,6 +248,10 @@ export const profile: Profile = {
         {
           label: 'arXiv',
           href: 'https://arxiv.org/abs/2508.00772',
+        },
+        {
+          label: 'Live demo',
+          href: 'https://codetocareerv3.onrender.com/',
         },
       ],
     },

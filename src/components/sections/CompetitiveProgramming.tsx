@@ -1,26 +1,21 @@
 import { Section, SectionHeading } from '@/components/ui/Section'
-import { SourceBadge } from '@/components/ui/SourceBadge'
 import { profile } from '@/data/portfolio'
 import { useAnimatedNumber } from '@/hooks/useAnimatedNumber'
 import { useInViewOnce } from '@/hooks/useInViewOnce'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { OnlineJudgeProfiles } from '@/components/sections/OnlineJudgeProfiles'
+import { ExternalLink } from 'lucide-react'
 
 function Stat({
   label,
   value,
-  source,
 }: {
   label: string
   value: string
-  source: 'self-reported' | 'live'
 }) {
   return (
     <article className="rounded-2xl border border-[var(--border)] bg-[var(--bg-elevated)] p-5">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="text-sm text-[var(--text-soft)]">{label}</p>
-        <SourceBadge source={source} />
-      </div>
+      <p className="mb-3 text-sm text-[var(--text-soft)]">{label}</p>
       <p className="font-display text-3xl text-[var(--text)]">{value}</p>
     </article>
   )
@@ -42,7 +37,6 @@ export function CompetitiveProgramming() {
         <Stat
           label="Problems solved"
           value={`${count}+`}
-          source="self-reported"
         />
       </div>
       <p className="mt-3 text-sm text-[var(--text-soft)]">{profile.platforms.problemsSolvedNote}</p>
@@ -52,11 +46,19 @@ export function CompetitiveProgramming() {
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {profile.achievements.map((item) => (
           <article key={item.id} className="rounded-2xl border border-[var(--border)] p-5">
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="text-[var(--text)]">{item.title}</h3>
-              <SourceBadge source={item.source} />
-            </div>
+            <h3 className="text-[var(--text)]">{item.title}</h3>
             <p className="mt-2 text-sm text-[var(--text-soft)]">{item.detail}</p>
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--accent)] transition hover:gap-2.5"
+              >
+                Read source
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            ) : null}
           </article>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { X } from 'lucide-react'
+import { ArrowUpRight, X } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/ui/Section'
 import { profile } from '@/data/portfolio'
 import type { Project } from '@/types/portfolio'
@@ -120,9 +120,10 @@ export function Projects() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm text-[var(--accent)]"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[var(--accent)]/35 px-3 py-1.5 text-sm text-[var(--accent)] transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]"
                 >
                   {link.label}
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
               ))}
             </div>
