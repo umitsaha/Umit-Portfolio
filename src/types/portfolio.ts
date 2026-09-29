@@ -18,6 +18,7 @@ export type ExperienceItem = {
   end: string
   summary: string[]
   highlight?: string
+  href?: string
 }
 
 export type EducationItem = {

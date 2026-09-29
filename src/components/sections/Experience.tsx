@@ -50,7 +50,19 @@ export function Experience() {
             >
               <h3 className="text-xl text-[var(--text)]">{item.role}</h3>
               <p className="mt-1 text-[var(--text-soft)]">
-                {item.organization} · {item.start} – {item.end}
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-[var(--accent)] underline-offset-4 transition hover:text-[var(--text)]"
+                  >
+                    {item.organization}
+                  </a>
+                ) : (
+                  item.organization
+                )}{' '}
+                · {item.start} – {item.end}
               </p>
               {item.highlight ? (
                 <p className="mt-4 rounded-2xl border border-[var(--border)] px-4 py-3 text-sm text-[var(--text)]">
