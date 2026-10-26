@@ -2,6 +2,7 @@ import profileImage from '@/assets/umit_profile_pic.jpg'
 import type { Profile } from '@/types/portfolio'
 
 const baseUrl = import.meta.env.BASE_URL
+const resumeVersion = import.meta.env.VITE_RESUME_VERSION
 
 export const profile: Profile = {
   name: 'Umit Saha',
@@ -20,7 +21,7 @@ export const profile: Profile = {
     'My research interests sit at the intersection of programming skill, assessment, and machine learning. I co-authored an IEEE conference paper on predicting industry placement from competitive programming performance.',
   ],
   email: 'umitsahaayon@gmail.com',
-  resumePath: `${baseUrl}resume/Umit_Saha.pdf`,
+  resumePath: `${baseUrl}resume/Umit_Saha.pdf?v=${resumeVersion}`,
   social: [
     {
       label: 'LinkedIn',
